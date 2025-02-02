@@ -2,21 +2,32 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
     config = function()
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = { "pyright", "clangd" }  -- Ensure LSPs are installed
-        })
-
+        local mason = require("mason")
+        local mason_lspconfig = require("mason-lspconfig")
         local lspconfig = require("lspconfig")
 
-        -- Python LSP (Pyright)
-        lspconfig.pyright.setup({})
+        -- List of LSP servers to install
+        local servers = {
+            "pyright",    -- Python LSP
+            "clangd",     -- C++ LSP
+            "ruff",       -- Python linter as an LSP (updated from ruff_lsp)
+        }
 
-        -- C++ LSP (Clangd)
-        lspconfig.clangd.setup({})
+        -- Setup Mason
+        mason.setup()
+        mason_lspconfig.setup({
+            ensure_installed = servers, -- Ensure these LSPs are installed
+        })
 
-        -- Additional LSPs
-        lspconfig.ruff.setup({})
+        -- Setup LSP servers automatically
+        for _, server in ipairs(servers) do
+            lspconfig[server].setup({})
+        end
+
+        -- Custom command to install all Mason tools manually
+        vim.api.nvim_create_user_command("MasonInstallAll", function()
+            vim.cmd("MasonInstall " .. table.concat(servers, " "))
+        end, {})
     end,
 }
 
