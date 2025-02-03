@@ -3,7 +3,7 @@
 │   ├── config
 │   │   └── lazy.lua
 │   └── plugins
-│       ├── spec1.lua
+│       ├── plugin1.lua
 │       ├── **
-│       └── spec2.lua
+│       └── pluginN.lua
 └── init.lua
