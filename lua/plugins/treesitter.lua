@@ -31,11 +31,11 @@ return {
         },
       })
 
-      -- Set indentation for C++ files specifically
+      -- Set indentation for C and C++ files to 2 spaces
       vim.api.nvim_exec([[
-        augroup cpp_indent
+        augroup cpp_c_indent
           autocmd!
-          autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+          autocmd FileType c,cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
         augroup END
       ]], false)
     end
