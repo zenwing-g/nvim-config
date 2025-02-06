@@ -30,6 +30,14 @@ return {
           },
         },
       })
+
+      -- Set indentation for C++ files specifically
+      vim.api.nvim_exec([[
+        augroup cpp_indent
+          autocmd!
+          autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        augroup END
+      ]], false)
     end
   }
 }
