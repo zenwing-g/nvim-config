@@ -37,6 +37,10 @@ return {
         -- Add nvim-cmp capabilities
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
+        -- OpenCV path (update with the correct path on your system)
+        local opencv_include_path = "/usr/include/opencv4"  -- Include directory for OpenCV headers
+        local opencv_lib_path = "/usr/lib/x86_64-linux-gnu"  -- Library directory for OpenCV
+
         -- Configure LSP servers
         for _, server in ipairs(servers) do
             if server == "clangd" then
@@ -51,7 +55,14 @@ return {
                         "--background-index",
                         "--compile-commands-dir=.",
                         "--header-insertion=never",
-                        "--clang-tidy"
+                        "--clang-tidy",
+                        "-I/usr/include/opencv4" .. opencv_include_path,  -- Add OpenCV include path
+                        "-L" .. opencv_lib_path,     -- Add OpenCV library path
+                    },
+                    settings = {
+                        clangd = {
+                            compilationDatabasePath = opencv_lib_path, -- Point to the OpenCV library path if necessary
+                        },
                     },
                 })
             else
