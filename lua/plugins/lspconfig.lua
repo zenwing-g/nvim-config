@@ -32,10 +32,18 @@ return {
 
         -- Setup LSP servers automatically
         for _, server in ipairs(servers) do
-            lspconfig[server].setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
+            if server == "clangd" then
+                lspconfig[server].setup({
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                    cmd = { "clangd", "--background-index", "-I/usr/local/include/opencv4" },  -- Add OpenCV include path
+                })
+            else
+                lspconfig[server].setup({
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                })
+            end
         end
 
         -- Custom command to install all Mason tools manually
