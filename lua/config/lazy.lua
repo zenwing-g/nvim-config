@@ -28,5 +28,8 @@ require("lazy").setup({
   },
   install = { colorscheme = { "catppuccin" } },  -- Set default colorscheme during plugin installation
   checker = { enabled = true },  -- Enable automatic plugin update checking
+  ui = {
+        border = "rounded",
+    },
 })
 
