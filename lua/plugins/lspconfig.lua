@@ -56,8 +56,6 @@ return {
                         "--compile-commands-dir=.",
                         "--header-insertion=never",
                         "--clang-tidy",
-                        "-I/usr/include/opencv4" .. opencv_include_path,  -- Add OpenCV include path
-                        "-L" .. opencv_lib_path,     -- Add OpenCV library path
                     },
                     settings = {
                         clangd = {
