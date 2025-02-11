@@ -9,16 +9,15 @@ return {
           component_separators = { left = "", right = "" },  -- Component dividers
         },
         sections = {
-          lualine_a = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
-          lualine_b = { "branch" },
-          lualine_c = { { "filename", path = 1, symbols = { modified = " ", readonly = " " } } },
-          lualine_x = { "filetype" },
-          lualine_y = { " " },
+          lualine_a = { { "filename", path = 1, symbols = { modified = " ", readonly = " " } } },
+          lualine_b = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
+          lualine_c = { "branch" },
+          lualine_x = { "" },
+          lualine_y = { "diagnostics" },
           lualine_z = { { "location", separator = { left = "", right = "" }, left_padding = 2 } },
         },
       })
     end,
   },
 }
-
 
