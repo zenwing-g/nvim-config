@@ -27,9 +27,10 @@ require("lazy").setup({
     { import = "plugins" },  -- Import plugin definitions from the plugins/ directory (including ui.lua)
   },
   install = { colorscheme = { "catppuccin" } },  -- Set default colorscheme during plugin installation
-  checker = { enabled = true },  -- Enable automatic plugin update checking
+  checker = { enabled = false },  -- Disable automatic update checking
+  change_detection = { notify = true },  -- Disable update notifications
   ui = {
         border = "rounded",
-    },
+  },
 })
 
