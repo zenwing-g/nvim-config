@@ -10,11 +10,12 @@ return {
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-        -- List of LSP servers to install
+        -- List of LSP servers to install (removed lua_ls)
         local servers = {
-            "pyright",  -- Python LSP
-            "clangd",   -- C++ LSP
-            "ruff",     -- Python linter as an LSP
+            "pyright",        -- Python LSP
+            "clangd",         -- C++ LSP
+            "ruff",           -- Python linter as an LSP
+            "marksman",       -- Markdown LSP
         }
 
         -- Setup Mason
@@ -37,7 +38,7 @@ return {
         -- Add nvim-cmp capabilities
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Configure LSP servers
+        -- Configure LSP servers (excluding lua_ls here)
         for _, server in ipairs(servers) do
             lspconfig[server].setup({
                 on_attach = on_attach,
