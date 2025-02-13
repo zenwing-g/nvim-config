@@ -37,44 +37,27 @@ return {
         -- Add nvim-cmp capabilities
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- OpenCV path (update with the correct path on your system)
-        local opencv_include_path = "/usr/include/opencv4"  -- Include directory for OpenCV headers
-        local opencv_lib_path = "/usr/lib/x86_64-linux-gnu"  -- Library directory for OpenCV
-
         -- Configure LSP servers
         for _, server in ipairs(servers) do
-            if server == "clangd" then
-                lspconfig.clangd.setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                    root_dir = lspconfig.util.root_pattern(
-                        ".git", "CMakeLists.txt", "Makefile", ".clangd", "compile_commands.json"
-                    ),
-                    cmd = {
-                        "clangd",
-                        "--background-index",
-                        "--compile-commands-dir=.",
-                        "--header-insertion=never",
-                        "--clang-tidy",
-                    },
-                    settings = {
-                        clangd = {
-                            compilationDatabasePath = opencv_lib_path, -- Point to the OpenCV library path if necessary
-                        },
-                    },
-                })
-            else
-                lspconfig[server].setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                })
-            end
+            lspconfig[server].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
         end
 
         -- Command to install all Mason tools manually
         vim.api.nvim_create_user_command("MasonInstallAll", function()
             vim.cmd("MasonInstall " .. table.concat(servers, " "))
         end, {})
+
+        -- Configure diagnostic settings with icons
+        vim.diagnostic.config({
+            update_in_insert = true,  -- Show errors while typing
+            virtual_text = true,      -- Enable inline error messages
+            signs = true,             -- Enable error signs next to line numbers
+            underline = true,         -- Underline errors
+            severity_sort = true,     -- Sort errors by severity
+        })
     end,
 }
 
