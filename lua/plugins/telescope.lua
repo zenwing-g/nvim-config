@@ -4,7 +4,6 @@ return {
     tag = "0.1.8", -- or branch = "0.1.x"
     dependencies = { "nvim-lua/plenary.nvim", "catppuccin/nvim" }, -- Ensure Catppuccin is included
     config = function()
-      -- Apply Catppuccin theme to Telescope
       require("telescope").setup({
         defaults = {
           prompt_prefix = "🔍 ",
@@ -16,7 +15,18 @@ return {
           winblend = 10, -- Make Telescope background semi-transparent
           border = true, -- Keep the border
           color_devicons = true,
-          theme = "catppuccin", -- Use Catppuccin for UI
+        },
+        pickers = {
+          find_files = {
+            hidden = true, -- Show hidden files
+          },
+        },
+      })
+
+      -- Apply Catppuccin theme to Telescope
+      require("catppuccin").setup({
+        integrations = {
+          telescope = true, -- Enable Catppuccin for Telescope
         },
       })
 
@@ -26,7 +36,7 @@ return {
           autocmd!
           autocmd ColorScheme catppuccin highlight NormalFloat guibg=NONE
           autocmd ColorScheme catppuccin highlight TelescopeNormal guibg=NONE
-          autocmd ColorScheme catppuccin highlight TelescopeBorder guibg=#1f1f1f -- Set border color if needed
+          autocmd ColorScheme catppuccin highlight TelescopeBorder guifg=#1f1f1f
         augroup END
       ]])
 
