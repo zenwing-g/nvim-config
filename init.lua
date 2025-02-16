@@ -8,7 +8,6 @@ vim.opt.cmdheight = 1
 vim.opt.scrolloff = 6
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
-vim.o.mouse = ""
 
 require("config.lazy")
 
