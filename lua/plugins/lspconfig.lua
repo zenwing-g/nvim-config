@@ -10,7 +10,7 @@ return {
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-        -- List of LSP servers to install (removed lua_ls)
+        -- List of LSP servers to install
         local servers = {
             "pyright",        -- Python LSP
             "clangd",         -- C++ LSP
@@ -20,7 +20,7 @@ return {
 
         -- Setup Mason
         mason.setup({
-            ui = { border = "rounded" }, -- Rounded border for Mason UI
+            ui = { border = "rounded" },
         })
 
         -- Ensure LSP servers are installed
@@ -38,7 +38,7 @@ return {
         -- Add nvim-cmp capabilities
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Configure LSP servers (excluding lua_ls here)
+        -- Configure LSP servers
         for _, server in ipairs(servers) do
             lspconfig[server].setup({
                 on_attach = on_attach,
@@ -51,13 +51,28 @@ return {
             vim.cmd("MasonInstall " .. table.concat(servers, " "))
         end, {})
 
-        -- Configure diagnostic settings with icons
+        -- Configure diagnostic settings
         vim.diagnostic.config({
-            update_in_insert = true,  -- Show errors while typing
-            virtual_text = true,      -- Enable inline error messages
-            signs = true,             -- Enable error signs next to line numbers
-            underline = true,         -- Underline errors
-            severity_sort = true,     -- Sort errors by severity
+            update_in_insert = false,  -- Prevent updating diagnostics in insert mode
+            virtual_text = false,      -- Start with virtual text disabled
+            signs = true,              -- Enable error signs next to line numbers
+            underline = true,          -- Underline errors
+            severity_sort = true,      -- Sort errors by severity
+        })
+
+        -- Autocommands to toggle virtual text based on mode
+        vim.api.nvim_create_autocmd("ModeChanged", {
+            pattern = "*:n",  -- When entering normal mode
+            callback = function()
+                vim.diagnostic.config({ virtual_text = true })
+            end,
+        })
+
+        vim.api.nvim_create_autocmd("ModeChanged", {
+            pattern = "n:*",  -- When leaving normal mode
+            callback = function()
+                vim.diagnostic.config({ virtual_text = false })
+            end,
         })
     end,
 }
