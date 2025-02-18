@@ -1,37 +1,34 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',  -- Ensure parsers are installed
+    run = ':TSUpdate',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects'  -- Optional: if you want text object support
+      'nvim-treesitter/nvim-treesitter-textobjects'
     },
     config = function()
-      -- Setup nvim-treesitter
       require('nvim-treesitter.configs').setup({
-        ensure_installed = {"python","c","cpp","java","lua"},  -- Automatically install maintained parsers
-        sync_install = false,  -- Install parsers asynchronously
+        ensure_installed = {"python","c","cpp","java","lua"},
+        sync_install = false,
         highlight = {
-          enable = true,  -- Enable syntax highlighting
-          disable = {},   -- Disable for specific filetypes if needed
+          enable = true,
+          disable = {},
         },
         indent = {
-          enable = true,  -- Enable smart indentation
+          enable = true,
         },
         textobjects = {
           select = {
             enable = true,
-            lookahead = true,  -- Enable lookahead for better selection
+            lookahead = true,
             keymaps = {
-              ["af"] = "@function.outer",  -- Select entire function
-              ["if"] = "@function.inner",  -- Select inner function
-              ["ac"] = "@class.outer",     -- Select entire class
-              ["ic"] = "@class.inner",     -- Select inner class
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
+              ["ac"] = "@class.outer",
+              ["ic"] = "@class.inner",
             },
           },
         },
       })
-
-      -- Set indentation for C and C++ files to 2 spaces
       vim.api.nvim_exec([[
         augroup cpp_c_indent
           autocmd!
@@ -41,4 +38,3 @@ return {
     end
   }
 }
-

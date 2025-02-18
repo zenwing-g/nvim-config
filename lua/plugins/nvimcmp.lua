@@ -14,9 +14,7 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-
-    require("luasnip.loaders.from_vscode").lazy_load() -- Load snippets
-
+    require("luasnip.loaders.from_vscode").lazy_load()
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -39,12 +37,10 @@ return {
         format = require("lspkind").cmp_format({ with_text = true }),
       },
       window = {
-        completion = cmp.config.window.bordered(), -- Adds a border around the suggestions
-        documentation = cmp.config.window.bordered(), -- Adds a border around documentation popups
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
     })
-
     require("nvim-autopairs").setup({})
   end,
 }
-

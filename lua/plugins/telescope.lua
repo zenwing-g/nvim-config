@@ -1,8 +1,8 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8", -- or branch = "0.1.x"
-    dependencies = { "nvim-lua/plenary.nvim", "catppuccin/nvim" }, -- Ensure Catppuccin is included
+    tag = "0.1.8",
+    dependencies = { "nvim-lua/plenary.nvim", "catppuccin/nvim" },
     config = function()
       require("telescope").setup({
         defaults = {
@@ -12,25 +12,21 @@ return {
           layout_config = {
             prompt_position = "top",
           },
-          winblend = 10, -- Make Telescope background semi-transparent
-          border = true, -- Keep the border
+          winblend = 10,
+          border = true,
           color_devicons = true,
         },
         pickers = {
           find_files = {
-            hidden = true, -- Show hidden files
+            hidden = true,
           },
         },
       })
-
-      -- Apply Catppuccin theme to Telescope
       require("catppuccin").setup({
         integrations = {
-          telescope = true, -- Enable Catppuccin for Telescope
+          telescope = true,
         },
       })
-
-      -- Disable Catppuccin background for Telescope (while keeping border)
       vim.cmd([[
         augroup TelescopeBackground
           autocmd!
@@ -39,8 +35,6 @@ return {
           autocmd ColorScheme catppuccin highlight TelescopeBorder guifg=#1f1f1f
         augroup END
       ]])
-
-      -- Define keymaps for Telescope commands
       vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
@@ -48,4 +42,3 @@ return {
     end,
   }
 }
-
