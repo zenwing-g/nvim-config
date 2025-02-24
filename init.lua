@@ -4,10 +4,10 @@ vim.opt.tabstop = 4-- Tabs appear as 4 spaces
 vim.opt.softtabstop = 4-- Backspace treats tab as 4 spaces
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.cmdheight = 1
 vim.opt.scrolloff = 6
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+vim.opt.guicursor = ""
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "lua",
@@ -19,6 +19,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-
 require("config.lazy")
-
