@@ -4,20 +4,18 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "catppuccin",
-          section_separators = { left = "", right = "" },  -- Curved separators for sections
-          component_separators = { left = "", right = "" },  -- Component dividers
+          section_separators = {},  -- Keep section separators
+          component_separators = {},  -- Keep component separators
         },
         sections = {
-          lualine_a = { { "filename", path = 1, symbols = { modified = " ", readonly = " " } } },
-          lualine_b = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
-          lualine_c = { "branch" },
+          lualine_a = { { "filename", path = 2, symbols = { modified = " ", readonly = " " } } },
+          lualine_b = { "branch" },
+          lualine_c = { },
           lualine_x = { "diagnostics" },
           lualine_y = { "filesize" },
-          lualine_z = { { "location", separator = { left = "", right = "" }, left_padding = 2 } },
+          lualine_z = { { "location", separator = { left = "", right = "" }, left_padding = 2 } },
         },
       })
     end,
   },
 }
-
