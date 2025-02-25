@@ -6,6 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "lua",
