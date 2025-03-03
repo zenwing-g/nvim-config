@@ -22,76 +22,76 @@ NVIM_APPNAME=zenwing-g/nvim-config/ nvim
 
 ## Plugins
 
-### colorscheme
+### Colorscheme
 
 - [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
 
-### comment
+### Comment
 
 - [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 
-### completion
+### Completion
 
 - [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
 
-### debugging
+### Debugging
 
 - [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 - [theHamsta/nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
 - [rcarriga/nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
 
-### editing-support
+### Editing Support
 
 - [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 
-### fuzzy-finder
+### Fuzzy Finder
 
 - [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
 
-### git
+### Git
 
 - [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 
-### icon
+### Icon
 
 - [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 
-### indent
+### Indentation
 
 - [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
 
-### lsp
+### LSP
 
 - [nvimtools/none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
 - [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
 - [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 
-### lsp-installer
+### LSP Installer
 
 - [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
 
-### nvim-dev
+### Nvim dev
 
 - [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 
-### plugin-manager
+### Plugin Manager
 
 - [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 
-### snippet
+### Snippet
 
 - [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
 - [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 
-### startup
+### Startup
 
 - [glepnir/dashboard-nvim](https://dotfyle.com/plugins/glepnir/dashboard-nvim)
 
-### statusline
+### Statusline
 
 - [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
 
-### syntax
+### Syntax
 
 - [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
 - [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
