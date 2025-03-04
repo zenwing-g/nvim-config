@@ -7,7 +7,7 @@ return {
 		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "python", "c", "cpp", "java", "lua", "go" },
+				ensure_installed = { "python", "c", "cpp", "java", "lua", "go", "markdown", "markdown_inline" },
 				sync_install = false,
 				highlight = {
 					enable = true,
@@ -40,6 +40,19 @@ return {
       ]],
 				false
 			)
+		end,
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("render-markdown").setup({
+				latex = { enabled = false },
+				html = { enabled = false },
+			})
 		end,
 	},
 }
