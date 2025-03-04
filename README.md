@@ -1,12 +1,14 @@
-# nvim-config/
+# nvim-config
 
-<a href="https://dotfyle.com/zenwing-g/nvim-config"><img src="https://dotfyle.com/zenwing-g/nvim-config/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/zenwing-g/nvim-config"><img src="https://dotfyle.com/zenwing-g/nvim-config/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/zenwing-g/nvim-config"><img src="https://dotfyle.com/zenwing-g/nvim-config/badges/plugin-manager?style=flat" /></a>
+## Badges
 
-## Install Instructions
+[![Plugins](https://dotfyle.com/zenwing-g/nvim-config/badges/plugins?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
+[![Leader Key](https://dotfyle.com/zenwing-g/nvim-config/badges/leaderkey?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
+[![Plugin Manager](https://dotfyle.com/zenwing-g/nvim-config/badges/plugin-manager?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
 
-> Install requires Neovim 0.9+. Always review the code before installing a configuration.
+## Installation
+
+> Requires **Neovim 0.9+**. Always review the code before installing.
 
 Clone the repository and install the plugins:
 
@@ -14,100 +16,106 @@ Clone the repository and install the plugins:
 git clone git@github.com:zenwing-g/nvim-config ~/.config/zenwing-g/nvim-config
 ```
 
-Open Neovim with this config:
+Launch Neovim with this configuration:
 
 ```sh
 NVIM_APPNAME=zenwing-g/nvim-config/ nvim
 ```
 
+---
+
 ## Plugins
 
-- ### Colorscheme
+### Colorscheme
 
-  - [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
+- [Catppuccin](https://dotfyle.com/plugins/catppuccin/nvim)
 
-- ### Comment
+### Commenting
 
-  - [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
+- [Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 
-- ### Completion
+### Completion
 
-  - [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+- [nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
 
-- ### Debugging
+### Debugging
 
-  - [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
-  - [theHamsta/nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
-  - [rcarriga/nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
+- [nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
+- [nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
+- [nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
 
-- ### Editing Support
+### Editing Support
 
-  - [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
+- [nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 
-- ### Fuzzy Finder
+### Fuzzy Finder
 
-  - [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
+- [Telescope](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
 
-- ### Git
+### Git Integration
 
-  - [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+- [gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 
-- ### Icon
+### Icons
 
-  - [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
+- [nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 
-- ### Indentation
+### Indentation
 
-  - [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
+- [indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
 
-- ### LSP
+### LSP Configuration
 
-  - [nvimtools/none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
-  - [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
-  - [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+- [nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+- [lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
+- [none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
 
-- ### LSP Installer
+### LSP Installer
 
-  - [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
+- [Mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
 
-- ### Nvim dev
+### Markdown & LaTeX
 
-  - [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
+- [Render Markdown](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
 
-- ### Plugin Manager
+### Neovim Development
 
-  - [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+- [plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 
-- ### Snippet
+### Plugin Manager
 
-  - [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
-  - [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
+- [Lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 
-- ### Startup
+### Snippets
 
-  - [glepnir/dashboard-nvim](https://dotfyle.com/plugins/glepnir/dashboard-nvim)
+- [LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
+- [Friendly Snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
 
-- ### Statusline
+### Startup
 
-  - [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
+- [Dashboard.nvim](https://dotfyle.com/plugins/glepnir/dashboard-nvim)
 
-- ### Syntax
+### Statusline
 
-  - [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-  - [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
+- [Lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
+
+### Syntax Highlighting
+
+- [Treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
+- [Treesitter TextObjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
+
+---
 
 ## Language Servers
 
-- clangd
-- gopls
-- marksman
-- pyright
+- **C/C++:** `clangd`
+- **Go:** `gopls`
+- **Markdown:** `marksman`
+- **Python:** `pyright`
 
----
+> **Note:**<br>
+> This configuration is optimized for my workflow. Feel free to change as per your needs. There's also a **tmux** config file; ignore it if not required.
 
-> **_Note_**<br>
-> This configuration is optimized for my workflow. Feel free to change as per your needs. There's also a tmux conf file, ignore it if not required.
+<br>
 
----
-
-**_This readme was generated by [Dotfyle](https://dotfyle.com)_**
+**_Readme generated by [Dotfyle](https://dotfyle.com)_**
