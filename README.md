@@ -10,16 +10,32 @@
 
 > Requires **Neovim 0.9+**. Always review the code before installing.
 
+#### **Linux/macOS**
+
 Clone the repository and install the plugins:
 
 ```sh
 git clone git@github.com:zenwing-g/nvim-config ~/.config/zenwing-g/nvim-config
 ```
 
-Launch Neovim with this configuration:
+#### **Windows (Git Bash, WSL, or PowerShell)**
+
+For Git Bash or WSL:
 
 ```sh
-NVIM_APPNAME=zenwing-g/nvim-config/ nvim
+git clone git@github.com:zenwing-g/nvim-config $HOME/.config/zenwing-g/nvim-config
+```
+
+For PowerShell:
+
+```powershell
+git clone git@github.com:zenwing-g/nvim-config "$HOME\.config\zenwing-g\nvim-config"
+```
+
+### **Launching Neovim with this configuration**
+
+```sh
+NVIM_APPNAME=zenwing-g/nvim-config nvim
 ```
 
 ---
