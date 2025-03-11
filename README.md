@@ -1,137 +1,89 @@
-# nvim-config
+# Neovim Configuration
 
-## Badges
-
-[![Plugins](https://dotfyle.com/zenwing-g/nvim-config/badges/plugins?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
-[![Leader Key](https://dotfyle.com/zenwing-g/nvim-config/badges/leaderkey?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
-[![Plugin Manager](https://dotfyle.com/zenwing-g/nvim-config/badges/plugin-manager?style=flat)](https://dotfyle.com/zenwing-g/nvim-config)
+This is my personal Neovim configuration, powered by **lazy.nvim** for plugin management. It includes LSP support, autocompletion, debugging, a theme, and other essential enhancements.
 
 ## Installation
 
-> Requires **Neovim 0.9+**. Always review the code before installing.
+Clone this repository into your Neovim configuration directory:
 
-#### **Linux/macOS**
-
-Clone the repository and install the plugins:
+### **Linux & macOS**
 
 ```sh
-git clone git@github.com:zenwing-g/nvim-config ~/.config/zenwing-g/nvim-config
+git clone https://github.com/yourusername/nvim-config.git ~/.config/nvim
 ```
 
-#### **Windows (Git Bash, WSL, or PowerShell)**
-
-For Git Bash or WSL:
-
-```sh
-git clone git@github.com:zenwing-g/nvim-config $HOME/.config/zenwing-g/nvim-config
-```
-
-For PowerShell:
+### **Windows (PowerShell)**
 
 ```powershell
-git clone git@github.com:zenwing-g/nvim-config "$HOME\.config\zenwing-g\nvim-config"
+git clone https://github.com/yourusername/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
 
-### **Launching Neovim with this configuration**
+After cloning, open Neovim and run:
 
 ```sh
-NVIM_APPNAME=zenwing-g/nvim-config nvim
+nvim
 ```
 
----
+Lazy.nvim will automatically install the required plugins.
 
-## Plugins
+## Configuration Structure
 
-### Colorscheme
+```sh
+.
+├── init.lua
+├── lazy-lock.json
+├── .tmux.conf
+├── lua
+│   ├── config
+│   │   └── lazy.lua
+│   └── plugins
+│       ├── autopairs.lua
+│       ├── catppuccin.lua
+│       ├── comment.lua
+│       ├── dap.lua
+│       ├── dashboard.lua
+│       ├── gitsigns.lua
+│       ├── lspconfig.lua
+│       ├── lualine.lua
+│       ├── nvimcmp.lua
+│       ├── render_markdown.lua
+│       ├── telescope.lua
+│       ├── treesitter.lua
+│       ├── visual_multi.lua
+└── README.md
+```
 
-- [Catppuccin](https://dotfyle.com/plugins/catppuccin/nvim)
+## Plugin List
 
-### Commenting
+- [**lazy.nvim**](https://github.com/folke/lazy.nvim) - Plugin manager
+- [**nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter) - Syntax highlighting & parsing
+- [**nvim-lspconfig**](https://github.com/neovim/nvim-lspconfig) - LSP configurations
+- [**nvim-cmp**](https://github.com/hrsh7th/nvim-cmp) - Autocompletion
+- [**LuaSnip**](https://github.com/L3MON4D3/LuaSnip) - Snippet engine
+- [**nvim-dap**](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol
+- [**telescope.nvim**](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy Finder
+- [**gitsigns.nvim**](https://github.com/lewis6991/gitsigns.nvim) - Git integration
+- [**lualine.nvim**](https://github.com/nvim-lualine/lualine.nvim) - Statusline
+- [**dashboard-nvim**](https://github.com/glepnir/dashboard-nvim) - Neovim startup dashboard
+- [**nvim-autopairs**](https://github.com/windwp/nvim-autopairs) - Auto-close brackets & quotes
+- [**Comment.nvim**](https://github.com/numToStr/Comment.nvim) - Commenting utility
+- [**vim-visual-multi**](https://github.com/mg979/vim-visual-multi) - Multi-cursor support
+- [**render-markdown.nvim**](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Markdown preview
+- [**catppuccin.nvim**](https://github.com/catppuccin/nvim) - Theme
 
-- [Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
+## Features
 
-### Completion
+- **LSP Support** - Auto-install and configure language servers
+- **Autocompletion** - Intelligent suggestions with `nvim-cmp`
+- **Syntax Highlighting** - Treesitter-enhanced highlighting
+- **Git Integration** - View diffs, hunks, and blame with `gitsigns.nvim`
+- **Debugging** - Integrated debugging with `nvim-dap`
+- **File Searching** - Fuzzy file and text search with `telescope.nvim`
+- **Statusline & Dashboard** - Aesthetic enhancements with `lualine.nvim` & `dashboard-nvim`
 
-- [nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+> Note:<br>
+> There's also a [**tmux**](https://github.com/tmux/tmux) config file. Can ignore it if not required.
 
-### Debugging
+## Contributions
 
-- [nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
-- [nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
-- [nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
-
-### Editing Support
-
-- [nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
-
-### Fuzzy Finder
-
-- [Telescope](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
-
-### Git Integration
-
-- [gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
-
-### Icons
-
-- [nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
-
-### Indentation
-
-- [indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
-
-### LSP Configuration
-
-- [nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-- [lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
-- [none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
-
-### LSP Installer
-
-- [Mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
-
-### Markdown & LaTeX
-
-- [Render Markdown](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
-
-### Neovim Development
-
-- [plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
-
-### Plugin Manager
-
-- [Lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
-
-### Snippets
-
-- [LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
-- [Friendly Snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
-
-### Startup
-
-- [Dashboard.nvim](https://dotfyle.com/plugins/glepnir/dashboard-nvim)
-
-### Statusline
-
-- [Lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
-
-### Syntax Highlighting
-
-- [Treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-- [Treesitter TextObjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
-
----
-
-## Language Servers
-
-- **C/C++:** `clangd`
-- **Go:** `gopls`
-- **Markdown:** `marksman`
-- **Python:** `pyright`
-
-> **Note:**<br>
-> This configuration is optimized for my workflow. Feel free to change as per your needs. There's also a **tmux** config file; ignore it if not required.
-
-<br>
-
-**_Readme generated by [Dotfyle](https://dotfyle.com)_**
+Feel free to fork and modify this configuration to suit your workflow. PRs are welcome!
