@@ -9,7 +9,7 @@ Clone this repository into your Neovim configuration directory:
 ### **Linux & macOS**
 
 ```sh
-git clone https://github.com/yourusername/nvim-config.git ~/.config/nvim
+git clone https://github.com/zenwing-g/nvim-config.git ~/.config/nvim
 ```
 
 ### **Windows (PowerShell)**
