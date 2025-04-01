@@ -15,7 +15,7 @@ git clone https://github.com/zenwing-g/nvim-config.git ~/.config/nvim
 ### **Windows (PowerShell)**
 
 ```powershell
-git clone https://github.com/yourusername/nvim-config.git $env:LOCALAPPDATA\nvim
+git clone https://github.com/zenwing-g/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
 
 After cloning, open Neovim and run:
