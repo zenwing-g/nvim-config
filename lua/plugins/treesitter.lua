@@ -66,7 +66,7 @@ return {
 				[[
         augroup cpp_c_indent
           autocmd!
-          autocmd FileType c,cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+          autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4
         augroup END
         ]],
 				false

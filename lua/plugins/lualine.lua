@@ -40,7 +40,7 @@ return {
 					lualine_x = { "diagnostics" },
 
 					-- Show file size in section Y
-					lualine_y = { "filesize" },
+					lualine_y = {},
 
 					-- Show cursor location (line & column) in section Z
 					lualine_z = { "location" },
