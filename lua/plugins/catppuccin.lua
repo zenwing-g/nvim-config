@@ -20,6 +20,21 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				transparent_background = true, -- Enables transparency
+
+				styles = {
+					comments = {},
+					conditionals = {},
+					loops = {},
+					functions = {},
+					keywords = {},
+					strings = {},
+					variables = {},
+					numbers = {},
+					booleans = {},
+					properties = {},
+					types = {},
+					operators = {},
+				},
 			})
 
 			-- Set colorscheme
