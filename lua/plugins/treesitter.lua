@@ -30,7 +30,17 @@ return {
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				-- Specify which languages to install
-				ensure_installed = { "python", "c", "cpp", "java", "lua", "go", "markdown", "markdown_inline" },
+				ensure_installed = {
+					"python",
+					"c",
+					"cpp",
+					"java",
+					"lua",
+					"go",
+					"markdown",
+					"markdown_inline",
+					"arduino",
+				},
 
 				-- Install parsers asynchronously
 				sync_install = false,
@@ -61,12 +71,12 @@ return {
 				},
 			})
 
-			-- Set C and C++ indentation to 2 spaces
+			-- Set global indentation to 4 spaces for all file types
 			vim.api.nvim_exec(
 				[[
-        augroup cpp_c_indent
+        augroup global_indent
           autocmd!
-          autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4
+          autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
         augroup END
         ]],
 				false

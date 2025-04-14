@@ -31,7 +31,7 @@ return {
 			local mason_null_ls = require("mason-null-ls")
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local null_ls = require("null-ls") -- Correct module name
+			local null_ls = require("null-ls")
 
 			-- Language servers to install
 			local servers = {
@@ -40,6 +40,7 @@ return {
 				"ruff",
 				"marksman",
 				"gopls", -- Go language server
+				"arduino_language_server", -- Arduino Language Server
 			}
 
 			-- Formatters to install
@@ -85,18 +86,17 @@ return {
 				})
 			end
 
-			-- Custom Go LSP config
-			lspconfig.gopls.setup({
+			-- Custom Arduino LSP config
+			lspconfig.arduino_language_server.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				cmd = { "arduino-language-server" },
+				filetypes = { "arduino" },
 				settings = {
-					gopls = {
-						usePlaceholders = true, -- Enables function argument placeholders
-						completeUnimported = true, -- Auto-import missing packages
-						staticcheck = true, -- Enables static analysis
-						analyses = {
-							unusedparams = true,
-						},
+					arduino = {
+						cli = { path = "arduino-cli" },
+						board_manager = { enabled = true },
+						sketch = { path = "./" },
 					},
 				},
 			})
@@ -108,8 +108,8 @@ return {
 					null_ls.builtins.formatting.clang_format,
 					null_ls.builtins.formatting.prettier,
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.gofumpt, -- Go formatter
-					null_ls.builtins.formatting.golines, -- Go line-wrapping formatter
+					null_ls.builtins.formatting.gofumpt,
+					null_ls.builtins.formatting.golines,
 				},
 			})
 
